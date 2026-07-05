@@ -16,14 +16,14 @@
   <header id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="/src/assets/logo.jpeg" alt="Graduate Accelerate" />
+        <img src="/assets/logo.jpeg" alt="Graduate Accelerate" />
         <span class="nav-logo-text">GRADUATE<br/>ACCELERATE</span>
       </a>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#speakers">Speakers</a>
         <a href="#agenda">Agenda</a>
-        <a href="#highlights">Highlights</a>
+        <a href="#highlights">Our Team</a>
         <a href="#sponsors">Sponsors</a>
       </nav>
       <a href="#register" class="btn-primary">Register Now →</a>
@@ -36,7 +36,7 @@
       <a href="#about" class="mobile-link">About</a>
       <a href="#speakers" class="mobile-link">Speakers</a>
       <a href="#agenda" class="mobile-link">Agenda</a>
-      <a href="#highlights" class="mobile-link">Highlights</a>
+      <a href="#highlights" class="mobile-link">Our Team</a>
       <a href="#sponsors" class="mobile-link">Sponsors</a>
       <a href="#register" class="btn-primary mobile-cta">Register Now →</a>
     </div>
@@ -162,52 +162,89 @@
       <div class="speakers-header">
         <p class="section-label light gs-label">— THE VOICES</p>
         <h2 class="section-headline light gs-headline">
-          SPEAKERS WHO'VE<br/>
+          SPEAKERS WHO'VE<br />
           <span class="gold">DONE IT.</span>
         </h2>
-        <p class="speakers-sub gs-body-light">Details, bios and photos of confirmed speakers will be announced soon. Every speaker brings demonstrated success and lived experience.</p>
+        <p class="speakers-sub gs-body-light">Every speaker brings demonstrated success and lived experience —
+          communicating complex ideas in simple, relatable ways.</p>
       </div>
       <div class="speakers-grid">
-        <!-- Speaker cards — placeholder state -->
-        <div class="speaker-card gs-card">
+  
+        <div class="speaker-card gs-card" data-speaker="jd">
           <div class="speaker-img-wrap">
-            <div class="speaker-placeholder">
-              <span>COMING<br/>SOON</span>
-            </div>
+            <img src="/src/assets/JD's Headshot.jpg" alt="JD Adesegun-David" />
+            <div class="speaker-overlay"><span>Read Bio →</span></div>
           </div>
           <div class="speaker-info">
-            <span class="speaker-badge">HEADLINE SPEAKER</span>
-            <p class="speaker-name">TBA</p>
-            <p class="speaker-role">To be announced</p>
+            <p class="speaker-name">Jesudamilare "JD" Adesegun-David</p>
+            <p class="speaker-role">Co-founder & CEO, Ennovate Lab</p>
           </div>
         </div>
-        <div class="speaker-card gs-card">
+  
+        <div class="speaker-card gs-card" data-speaker="victor">
           <div class="speaker-img-wrap">
-            <div class="speaker-placeholder">
-              <span>COMING<br/>SOON</span>
-            </div>
+            <img src="/src/assets/Adekunle Victor .jpg" alt="Adekunle Victor" />
+            <div class="speaker-overlay"><span>Read Bio →</span></div>
           </div>
           <div class="speaker-info">
-            <span class="speaker-badge">KEYNOTE SPEAKER</span>
-            <p class="speaker-name">TBA</p>
-            <p class="speaker-role">To be announced</p>
+            <p class="speaker-name">Adekunle Victor</p>
+            <p class="speaker-role">CMO, Genomac & Lead Marketer, Certifyer</p>
           </div>
         </div>
-        <div class="speaker-card gs-card">
+  
+        <div class="speaker-card gs-card" data-speaker="abayomi">
           <div class="speaker-img-wrap">
-            <div class="speaker-placeholder">
-              <span>COMING<br/>SOON</span>
-            </div>
+            <img src="/src/assets/Abayomi jpeg.jpeg" alt="Abayomi Perez" />
+            <div class="speaker-overlay"><span>Read Bio →</span></div>
           </div>
           <div class="speaker-info">
-            <span class="speaker-badge">PANELIST</span>
-            <p class="speaker-name">TBA</p>
-            <p class="speaker-role">To be announced</p>
+            <p class="speaker-name">Abayomi-Perez</p>
+            <p class="speaker-role">Startup Ecosystem Catalyst & Impact Consultant</p>
           </div>
         </div>
+  
+        <div class="speaker-card gs-card" data-speaker="bori">
+          <div class="speaker-img-wrap">
+            <img src="/src/assets/Coach Bori.jpeg" alt="Coach Bori" />
+            <div class="speaker-overlay"><span>Read Bio →</span></div>
+          </div>
+          <div class="speaker-info">
+            <p class="speaker-name">Olubori Paul</p>
+            <p class="speaker-role">Founder, GO Holdings & Finance Coach</p>
+          </div>
+        </div>
+  
+        <div class="speaker-card gs-card" data-speaker="samuel">
+          <div class="speaker-img-wrap">
+            <img src="/src/assets/Samuel Ojelade Pic.png" alt="Samuel Ojelade" />
+            <div class="speaker-overlay"><span>Read Bio →</span></div>
+          </div>
+          <div class="speaker-info">
+            <p class="speaker-name">Samuel Ojelade</p>
+            <p class="speaker-role">Leadership & Personal Development Advocate</p>
+          </div>
+        </div>
+  
       </div>
     </div>
   </section>
+  
+  <!-- ═══════════════════════════════════════════ BIO MODAL -->
+  <div id="bio-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modal-img" src="" alt="" />
+        </div>
+        <div class="modal-content">
+          <p class="modal-name" id="modal-name"></p>
+          <p class="modal-role" id="modal-role"></p>
+          <div class="modal-bio" id="modal-bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════ AGENDA -->
   <section id="agenda" class="cream-section">
@@ -286,32 +323,89 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ HIGHLIGHTS -->
+  <!-- ═══════════════════════════════════════════ TEAM -->
   <section id="highlights" class="dark-section">
     <div class="section-inner">
-      <p class="section-label light gs-label">— FROM PAST EDITIONS</p>
+      <p class="section-label light gs-label">— THE PEOPLE BEHIND IT</p>
       <h2 class="section-headline light gs-headline">
-        FIRST EDITION.<br/>
-        THOUSANDS <span class="gold">MOVED.</span>
+        DRIVEN BY<br />
+        <span class="gold">PURPOSE.</span>
       </h2>
-      <div class="highlights-grid gs-highlights">
-        <div class="highlight-img large">
-          <div class="img-placeholder">
-            <span>Event Photo<br/>Coming Soon</span>
+  
+      <div class="team-grid">
+  
+        <!-- Convener — larger card -->
+        <div class="team-card convener-card">
+          <div class="team-img-wrap">
+            <div class="team-placeholder">
+              <span>CONVENER<br />PHOTO</span>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-tag">Convener</span>
+            <p class="team-name">Name TBA</p>
+            <p class="team-role">Role / Title</p>
           </div>
         </div>
-        <div class="highlight-img">
-          <div class="img-placeholder">
-            <span>Event Photo<br/>Coming Soon</span>
+  
+        <!-- Team leads -->
+        <div class="team-leads-grid">
+  
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <div class="team-placeholder">
+                <span>PHOTO</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <span class="team-tag">Co-convener</span>
+              <p class="team-name">Name TBA</p>
+              <p class="team-role">Role / Title</p>
+            </div>
           </div>
-        </div>
-        <div class="highlight-img">
-          <div class="img-placeholder">
-            <span>Event Photo<br/>Coming Soon</span>
+  
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <div class="team-placeholder">
+                <span>PHOTO</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <span class="team-tag">Team Lead</span>
+              <p class="team-name">Name TBA</p>
+              <p class="team-role">Role / Title</p>
+            </div>
+          </div>
+  
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <div class="team-placeholder">
+                <span>PHOTO</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <span class="team-tag">Team Lead</span>
+              <p class="team-name">Name TBA</p>
+              <p class="team-role">Role / Title</p>
+            </div>
+          </div>
+  
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <div class="team-placeholder">
+                <span>PHOTO</span>
+              </div>
+            </div>
+            <div class="team-info">
+              <span class="team-tag">Team Lead</span>
+              <p class="team-name">Name TBA</p>
+              <p class="team-role">Role / Title</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  
     <!-- Ticker -->
     <div class="ticker-wrapper">
       <div class="ticker-track">
@@ -389,27 +483,22 @@
         </div>
       </div>
       <div class="register-right gs-form">
-        <div class="form-card">
-          <p class="form-title">Registration Form</p>
-          <!-- Google Form embed placeholder — replace src with actual form URL -->
-          <div class="form-placeholder">
-            <p>Google Form embed goes here</p>
-            <p class="form-placeholder-sub">Replace this div with:<br/>
-            <code>&lt;iframe src="YOUR_GOOGLE_FORM_URL"&gt;&lt;/iframe&gt;</code></p>
+        <div class="register-right gs-form">
+          <div class="form-card">
+            <p class="form-title">Registration Form</p>
+            <!-- <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe1Y8cQnsQ1l1v3uEIIAFz7Yo76DpIyejo2zyGFh8E8VT4/viewform?embedded=true"
+                    width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+                    Loading form…
+                  </iframe> -->
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfhb2pHxtb512fHIYGqsJfKcHyoEkF4OsXUH0JvTIKHoUUdcQ/viewform?embedded=true"
+              width="100%" height="1204" frameborder="0" marginheight="0" marginwidth="0"
+              sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-top-navigation">
+              Loading…
+            </iframe>
           </div>
-          <!-- Uncomment and replace URL when form is ready:
-          <iframe
-            src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-            width="100%"
-            height="600"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading form…
-          </iframe>
-          -->
         </div>
-      </div>
     </div>
   </section>
 
@@ -433,8 +522,8 @@
         <p>graduateaccelerateconference@gmail.com</p>
         <p>08142569458</p>
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="https://www.instagram.com/graduateaccelerate/" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/company/129064011/admin/dashboard/" aria-label="LinkedIn">LI</a>
         </div>
       </div>
     </div>
