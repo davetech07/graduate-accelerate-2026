@@ -308,14 +308,18 @@ document.querySelectorAll('.speaker-card').forEach(card => {
     modalName.textContent = s.name
     modalRole.textContent = s.role
     modalBio.innerHTML = s.bio
-    modal.classList.add('open')
-    lenis.stop()
+    modal.classList.add("open");
+    if (typeof lenis !== "undefined") lenis.stop();
   })
 })
 
+// function closeModal() {
+//   modal.classList.remove('open')
+//   lenis.start()
+// }
 function closeModal() {
-  modal.classList.remove('open')
-  lenis.start()
+  modal.classList.remove("open");
+  if (typeof lenis !== "undefined") lenis.start();
 }
 
 modalClose.addEventListener('click', closeModal)
