@@ -247,49 +247,49 @@ gsap.from('.gs-form', {
 const speakers = {
   jd: {
     name: 'Jesudamilare "JD" Adesegun-David',
-    role: 'Co-founder & CEO, Ennovate Lab',
-    img: '/src/assets/JD\'s Headshot.jpg',
+    role: "Co-founder & CEO, Ennovate Lab",
+    img: "/speaker-jd.jpg",
     bio: `<p>Jesudamilare "JD" Adesegun-David is a Thought Alchemist and Community Transformation Strategist. He is co-founder and CEO of Ennovate Lab, an Innovation Hub and Startup Foundry committed to building resilient innovation ecosystems in underserved university communities.</p>
     <p>JD believes the future of Africa is to be found in its secondary cities — building not in Lagos or Abuja, but in Ogbomoso, a city many overlook. He describes his life's work as "designing redemptive futures for people and places the world overlooks."</p>
     <p>A graduate of Agronomy and a Teach with Africa Fellow (South Africa), he has been recognized by YNaija in its New Establishment List and his work featured by Radical, Ziwani, African Blockchain Institute, and Charter Cities Institute among others.</p>
     <p>In 2024, he launched the Brave Redemptive Fellowship — a 9-month fully-funded residential programme. In 2025, he led the opening of the first purpose-built innovation park in Ogbomoso, The Assembly. That same year, he was named on Chude Jideonwo's #TheJoy150 — a definitive list of the most interesting people shaping culture across Africa.</p>
-    <p>He is married to Temitayo and they are blessed with four amazing children.</p>`
+    <p>He is married to Temitayo and they are blessed with four amazing children.</p>`,
   },
   victor: {
-    name: 'Adekunle Victor',
-    role: 'CMO, Genomac & Lead Marketer, Certifyer',
-    img: '/src/assets/Adekunle Victor .jpg',
+    name: "Adekunle Victor",
+    role: "CMO, Genomac & Lead Marketer, Certifyer",
+    img: "/speaker-victor.jpg",
     bio: `<p>Adekunle Victor is a Business and Marketing Strategist, Content Writer, and Growth Professional currently serving as the Chief Marketing Officer at Genomac — where he has contributed to impacting over 120,000+ people across 120+ countries — and Lead Marketer at Certifyer.</p>
     <p>He specializes in business growth, helping founders, professionals, and organizations build visibility and drive meaningful results through real strategies. Over the years, he has assisted 30+ businesses in creating high-impact strategies that strengthened brand presence, generated leads, and drove business opportunities across different industries.</p>
-    <p>His experience spans storytelling, demand generation, and growth-focused marketing campaigns. Passionate about business, building sustainable enterprises, and leveraging AI as a tool for innovation and growth, Adekunle is committed to helping brands and professionals transform ideas into influence, systems, and long-term impact.</p>`
+    <p>His experience spans storytelling, demand generation, and growth-focused marketing campaigns. Passionate about business, building sustainable enterprises, and leveraging AI as a tool for innovation and growth, Adekunle is committed to helping brands and professionals transform ideas into influence, systems, and long-term impact.</p>`,
   },
   abayomi: {
-    name: 'Abayomi-Perez',
-    role: 'Startup Ecosystem Catalyst & Impact Consultant',
-    img: '/src/assets/Abayomi jpeg.jpeg',
+    name: "Abayomi-Perez",
+    role: "Startup Ecosystem Catalyst & Impact Consultant",
+    img: "/speaker-abayomi.jpeg",
     bio: `<p>Abayomi-Perez is a startup ecosystem catalyst, development and impact consultant, and agripreneur with impact footprints in over 30 countries across Africa, Europe, and the U.S. He considers his greatest gift to be the ability to inspire people, build systems, and solve complex problems through wisdom.</p>
     <p>Over the past 15 years, he has dedicated his life to active service across diverse capacities and international organizations, impacting over 100,000 people within Nigeria and beyond.</p>
     <p>He currently serves at Ennovate Lab, leading the marketing team and consulting on portfolio projects. He also serves as a consultant to the YMCA Africa Headquarters in Nairobi, supporting impact tracking across 24 African countries. In addition, he is Co-founder of Avra Agric, a subsidiary of Avra Ventures.</p>
-    <p>He resides in Ogbomoso with his dear wife, and a community of brave hearts committed to doing great work that positively impacts the world.</p>`
+    <p>He resides in Ogbomoso with his dear wife, and a community of brave hearts committed to doing great work that positively impacts the world.</p>`,
   },
   bori: {
-    name: 'Olubori Paul',
-    role: 'Founder, GO Holdings & Finance Coach',
-    img: '/src/assets/Coach Bori.jpeg',
+    name: "Olubori Paul",
+    role: "Founder, GO Holdings & Finance Coach",
+    img: "/speaker-bori.jpeg",
     bio: `<p>Olubori Paul is a visionary businessman, finance coach, and mentor whose life mission is simple: to ensure that the next generation doesn't just survive the economy, but owns it. Known for his "Chaos to Clarity" approach, he has dedicated his career to turning financial confusion into a roadmap for freedom.</p>
     <p>As the founder of GO Holdings, Paul doesn't just teach wealth — he creates it. Through subsidiaries like Go-Digits, GoRealtyandhomes, GoFarms, GOmum, and GOkids, he has trained over 5,000 forex traders and helped more than 1,500 individuals become landowners.</p>
     <p>His impact is global — recognized as a Mandela Washington Fellow and a West Africa Youth Ambassador, with academic roots stretching from the University of Uyo to the Roxbourg Institute in Switzerland and the University of Notre Dame in the USA.</p>
-    <p>Through his NextGen Youth Entrepreneurship Fellowship, he provides the funding and mentorship young people need to break cycles of poverty and build sustainable businesses.</p>`
+    <p>Through his NextGen Youth Entrepreneurship Fellowship, he provides the funding and mentorship young people need to break cycles of poverty and build sustainable businesses.</p>`,
   },
   samuel: {
-    name: 'Samuel Ojelade',
-    role: 'Leadership & Personal Development Advocate',
-    img: '/src/assets/Samuel Ojelade Pic.png',
+    name: "Samuel Ojelade",
+    role: "Leadership & Personal Development Advocate",
+    img: "/speaker-samuel.png",
     bio: `<p>Samuel Ojelade is a leadership and personal development advocate with a passion for helping people pursue excellence, discover purpose, and maximize opportunities through knowledge. For over a decade, he has served in various leadership capacities — organizing academic tutorials, leading student and faith-based organizations, and mentoring aspiring writers.</p>
     <p>He graduated with distinction from Ladoke Akintola University of Technology (LAUTECH) with a degree in Physiology. Following his NYSC, he was selected as a National Health Fellow, representing Obafemi-Owode Local Government Area at the national level, earning the Award of Diligence from the Ogun State health sector.</p>
-    <p>Samuel is the author of <em>Purpose, Plan and Portion</em> — a book that inspires readers to embrace intentional living and purpose-driven leadership. Beyond his work in leadership and public health, he is a business professional with interests in investment and enterprise development.</p>`
-  }
-}
+    <p>Samuel is the author of <em>Purpose, Plan and Portion</em> — a book that inspires readers to embrace intentional living and purpose-driven leadership. Beyond his work in leadership and public health, he is a business professional with interests in investment and enterprise development.</p>`,
+  },
+};
 
 const modal = document.getElementById('bio-modal')
 const modalImg = document.getElementById('modal-img')
