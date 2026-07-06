@@ -1318,3 +1318,23 @@ a { text-decoration: none; color: inherit; }
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 768px) {
+  .form-card {
+    padding: 20px 8px;
+  }
+
+  .form-card iframe {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .register-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section-inner.register-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
