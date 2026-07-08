@@ -291,12 +291,16 @@ const speakers = {
   },
 };
 
+ /* ═══════════════════════════════════════════════════════
+   SPEAKER BIO MODAL
+   ═══════════════════════════════════════════════════════ */
 const modal = document.getElementById('bio-modal')
 const modalImg = document.getElementById('modal-img')
 const modalName = document.getElementById('modal-name')
 const modalRole = document.getElementById('modal-role')
 const modalBio = document.getElementById('modal-bio')
 const modalClose = document.getElementById('modal-close')
+const modalCard = modal.querySelector('.modal-card')
 
 document.querySelectorAll('.speaker-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -308,18 +312,17 @@ document.querySelectorAll('.speaker-card').forEach(card => {
     modalName.textContent = s.name
     modalRole.textContent = s.role
     modalBio.innerHTML = s.bio
-    modal.classList.add("open");
-    if (typeof lenis !== "undefined") lenis.stop();
+    modal.classList.add('open')
+    document.body.style.overflow = 'hidden'
+    modalCard.scrollTop = 0
+    if (typeof lenis !== 'undefined') lenis.stop()
   })
 })
 
-// function closeModal() {
-//   modal.classList.remove('open')
-//   lenis.start()
-// }
 function closeModal() {
-  modal.classList.remove("open");
-  if (typeof lenis !== "undefined") lenis.start();
+  modal.classList.remove('open')
+  document.body.style.overflow = ''
+  if (typeof lenis !== 'undefined') lenis.start()
 }
 
 modalClose.addEventListener('click', closeModal)
@@ -329,3 +332,23 @@ modal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal()
 })
+
+// Fix iOS touch scrolling inside modal
+let touchStartY = 0
+modalCard.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY
+}, { passive: true })
+
+modalCard.addEventListener('touchmove', (e) => {
+  const touchY = e.touches[0].clientY
+  const scrollTop = modalCard.scrollTop
+  const scrollHeight = modalCard.scrollHeight
+  const clientHeight = modalCard.clientHeight
+
+  const atTop = scrollTop <= 0 && touchY > touchStartY
+  const atBottom = scrollTop + clientHeight >= scrollHeight && touchY < touchStartY
+
+  if (atTop || atBottom) {
+    e.preventDefault()
+  }
+}, { passive: false })

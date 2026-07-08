@@ -744,6 +744,7 @@
    opacity: 0;
    pointer-events: none;
    transition: opacity 0.35s;
+   -webkit-overflow-scrolling: touch;
  }
 
  .modal-overlay.open {
@@ -756,12 +757,13 @@
    max-width: 780px;
    width: 100%;
    max-height: 90vh;
-   overflow-y: auto;
-   overscroll-behavior: contain;
+   overflow-y: scroll;
    -webkit-overflow-scrolling: touch;
+   overscroll-behavior: contain;
    position: relative;
    transform: translateY(30px);
    transition: transform 0.35s;
+   will-change: transform;
  }
 
  .modal-overlay.open .modal-card {
@@ -1562,19 +1564,22 @@
    }
 
    /* Modal — slide up from bottom on mobile */
-   .modal-overlay {
-     align-items: flex-end;
-     padding: 0;
-   }
+     .modal-overlay {
+       align-items: flex-end;
+       padding: 0;
+     }
 
-   .modal-card {
-     max-height: 88vh;
-     width: 100%;
-     max-width: 100%;
-     border-radius: 0;
-     overscroll-behavior: contain;
-     -webkit-overflow-scrolling: touch;
-   }
+     .modal-card {
+       max-height: 88vh;
+       width: 100%;
+       max-width: 100%;
+       border-radius: 0;
+       overflow-y: scroll;
+       -webkit-overflow-scrolling: touch;
+     }
+  
+     Save,
+     push to GitHub and test on your actual mobile device — the touch handler forces iOS to respect the scroll inside the modal. Wan
 
    .modal-overlay.open .modal-card {
      transform: translateY(0);
