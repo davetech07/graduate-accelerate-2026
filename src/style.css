@@ -940,7 +940,7 @@
 
  .team-leads-grid {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
+   grid-template-columns: repeat(3, 1fr);
    gap: 24px;
  }
 
@@ -1399,14 +1399,14 @@
  }
 
  .footer-socials a {
-   font-family: var(--font-body);
-   font-size: 11px;
-   font-weight: 700;
-   letter-spacing: 0.1em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 40px;
    color: var(--gold);
    border: 1px solid var(--border-light);
-   padding: 8px 14px;
-   transition: background 0.2s, border-color 0.2s;
+   transition: background 0.2s, border-color 0.2s, color 0.2s;
  }
 
  .footer-socials a:hover {
@@ -1577,9 +1577,6 @@
        overflow-y: scroll;
        -webkit-overflow-scrolling: touch;
      }
-  
-     Save,
-     push to GitHub and test on your actual mobile device — the touch handler forces iOS to respect the scroll inside the modal. Wan
 
    .modal-overlay.open .modal-card {
      transform: translateY(0);
