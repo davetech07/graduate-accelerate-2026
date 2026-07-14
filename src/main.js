@@ -289,6 +289,65 @@ const speakers = {
     <p>He graduated with distinction from Ladoke Akintola University of Technology (LAUTECH) with a degree in Physiology. Following his NYSC, he was selected as a National Health Fellow, representing Obafemi-Owode Local Government Area at the national level, earning the Award of Diligence from the Ogun State health sector.</p>
     <p>Samuel is the author of <em>Purpose, Plan and Portion</em> — a book that inspires readers to embrace intentional living and purpose-driven leadership. Beyond his work in leadership and public health, he is a business professional with interests in investment and enterprise development.</p>`,
   },
+  kolade: {
+    name: "Dr Kolade Adepoju",
+    role: "Entrepreneur, Real Estate Developer & Mentor",
+    img: "/speaker-kolade.jpeg",
+    bio: `<p>Kolade Adepoju is a versatile entrepreneur with nearly two decades of experience. As a fellow of the Institute of Management Consultants (FIMC) and a Certified Management Consultant (CMC), he brings extensive expertise to his ventures. As the MD/CEO of Riel Homes, Kolade specializes in addressing housing challenges in Nigeria, Africa, and beyond. The company has numerous estates in Nigeria, with upcoming developments in prestigious locations like Ikoyi, Lagos State.
+      Kolade is a West Africa Youth Ambassador and a recipient of the esteemed Nelson Mandela Leadership Award for Excellence and Integrity. He also founded ACOLEAD COMMUNICATIONS, a Company focusing on corporate and personal brand management, promotional items, and corporate gift items, with a diverse clientele including multinationals and top government agencies. Based in Lagos, Nigeria,
+      Kolade manages multiple companies and takes pride in supporting start-ups and witnessing their growth. He has been featured in over 100 media publications, such as The Cable, Business Day. This Day, and Punch, and has shared his expertise on real estate, business, and leadership on major national and international TV platforms.
+      Kolade's passion for mentoring led him to establish the non-profit initiative, Kolade Adepoju Mentoring Program (KAMP), which aims to mentor and train 10,000 youths annually to become change agents in their communities. He holds a B.Tech in Management from Ladoke Akintola University of Technology and has studied Brand Management at the University of London, in addition to various professional courses at institutions like Lagos Business School.
+      Kolade is a recipient of an Honorary Doctorate in Project Management from the Chartered Institute of Public Resource Management and Politics in Ghana. He is happily married to Damilola Adepoju, and the couple has two sons, David and Jason and a beautiful daughter Queen Esther.
+      </p>`,
+  },
+  joshua: {
+    name: "Joshua Akinyimika OLUKAYODE",
+    role: "Environmental Biology Graduate & Leadership Advocate",
+    img: "/speaker-Joshua.png",
+    bio: `<p>Joshua Akinyimika OLUKAYODE is an Environmental Biology graduate from LAUTECH, specializing in Public Health and Environmental Sustainability. He is passionate about personal, leadership, and administrative development across every stratum of human culture, establishment, and organization.
+    He engages young minds in discussions and counselling sessions geared towards purposeful living, both in their chosen careers and with a strong mindset of Kingdom influence and advancement.
+    He currently works with PETROCAM Trading Nigeria Limited (PTNL) as a Station Supervisor & HSE Representative.
+    Above all, he is a passionate lover of God and preacher of the Gospel, with an utmost desire to see young minds rise to great heights, serving God’s Kingdom passionately and influencing the world excellently.
+    </p>`,
+  },
+  david: {
+    name: "David Bamikunle (Dbam)",
+    role: "Architect, Creative Designer & Brand Strategist",
+    img: "/speaker-david.jpg",
+    bio: `<p>David Bamikunle (Dbam) is an Architect, Creative Designer, and Brand Strategist with a passion
+      for designing spaces and systems, building structures, and elevating lives. He is the Founder and
+      Lead Designer of Dbam Designs, a subsidiary of Dbam Nexus Limited (RC: 3514084), a
+      multidisciplinary design agency specializing in architectural design, architectural visualization,
+      construction, project management, branding, and graphic design.
+      David holds a Bachelor of Technology (B.Tech.) in Architecture from Ladoke Akintola University
+      of Technology (LAUTECH), where he graduated as the Best Graduating Student in the
+      Department of Architecture in 2024. Earlier, he obtained a National Diploma in Architectural
+      Technology from The Oke Ogun Polytechnic, Saki, in 2017.
+      With professional experience spanning architecture, construction, branding, graphics, and digital
+      media, David has successfully led and contributed to numerous luxury residential developments
+      across Lagos, Ogun, and Oyo States. He has also worked on commercial developments, including
+      Kilimanjaro and Market Square outlets in Lagos and Ogun States, as well as institutional projects.
+      His expertise covers architectural design, construction management, project coordination,
+      architectural visualization, branding strategy, and visual communication.
+      Beyond technical excellence, David is recognized for his exceptional leadership and commitment to
+      service. During his university years, he served as President of the LAUTECH Architecture
+      Students Association (LAUTASA), President of the UMCA Student Campus Fellowship, Vice
+      Coordinator of the LAUTECH Joint Christian Mission, Design Lead of the Google Developer
+      Student Club, a member of the LAUTECH Students&#39; Union Caretaker Committee, and Auditor
+      of the The Oke Ogun Polytechnic Students&#39; Union Government. His leadership has consistently
+      been marked by integrity, innovation, collaboration, and a passion for empowering others.
+      His excellence has been recognized through several prestigious awards, including the Best
+      Graduating Student in Architecture at LAUTECH, the LAUTASA Student of the Year Award,
+      the Best in Architectural Graphics Award, and the MTN Foundation Scholarship Award. These
+      recognitions reflect his dedication to academic excellence, creativity, leadership, and professional
+      development.
+      A committed Christian and passionate advocate for purposeful living, David believes that
+      architecture extends beyond buildings to shaping lives, communities, and lasting legacies. He is
+      driven by a vision to create sustainable designs, develop impactful brands, raise emerging
+      professionals, and build businesses that contribute meaningfully to society.
+
+    </p>`,
+  },
 };
 
  /* ═══════════════════════════════════════════════════════
