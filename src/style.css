@@ -1600,7 +1600,6 @@
      padding: 24px 20px 40px;
    }
  }
-
  @media (max-width: 560px) {
    .speakers-grid {
      grid-template-columns: 1fr;
@@ -1609,4 +1608,191 @@
    .team-leads-grid {
      grid-template-columns: 1fr 1fr;
    }
+
+   .merch-grid {
+     grid-template-columns: repeat(2, 1fr);
+     gap: 12px;
+   }
+
+   .merch-float-inner {
+     padding: 12px 16px;
+     gap: 12px;
+   }
+
+   .merch-float-label {
+     font-size: 12px;
+   }
+
+   .merch-float-sub {
+     display: none;
+   }
  }
+
+ /* ── MERCH SECTION ────────────────────────────────────── */
+ .merch-section {
+   background: var(--cream);
+ }
+
+ .merch-header {
+   margin-bottom: 60px;
+ }
+
+ .merch-sub {
+   font-family: var(--font-body);
+   font-size: 17px;
+   line-height: 1.8;
+   color: var(--text-muted);
+   max-width: 520px;
+ }
+
+ .merch-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 24px;
+   margin-bottom: 60px;
+ }
+
+ .merch-card {
+   background: var(--white);
+   border: 1px solid var(--cream-dark);
+   overflow: hidden;
+   transition: transform 0.3s, box-shadow 0.3s;
+   cursor: default;
+ }
+
+ .merch-card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 20px 60px rgba(33, 11, 0, 0.1);
+ }
+
+ .merch-img-wrap {
+   aspect-ratio: 1/1;
+   overflow: hidden;
+   background: #FAF0E6;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .merch-img-wrap img {
+   width: 85%;
+   height: 85%;
+   object-fit: contain;
+   transition: transform 0.5s;
+ }
+
+ .merch-card:hover .merch-img-wrap img {
+   transform: scale(1.04);
+ }
+
+ .merch-info {
+   padding: 20px 24px;
+   border-top: 1px solid var(--cream-dark);
+ }
+
+ .merch-name {
+   font-family: var(--font-display);
+   font-size: 16px;
+   font-weight: 800;
+   text-transform: uppercase;
+   letter-spacing: -0.01em;
+   color: var(--brown-deep);
+   margin-bottom: 4px;
+ }
+
+ .merch-variant {
+   font-family: var(--font-body);
+   font-size: 12px;
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: var(--gold);
+ }
+
+ .merch-cta {
+   text-align: center;
+ }
+
+ /* ── FLOATING MERCH BAR ───────────────────────────────── */
+ .merch-float {
+   position: fixed;
+   bottom: 24px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 150;
+   animation: floatIn 0.6s ease 2s both;
+ }
+
+ @keyframes floatIn {
+   from {
+     opacity: 0;
+     transform: translateX(-50%) translateY(20px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateX(-50%) translateY(0);
+   }
+ }
+
+ .merch-float.hidden {
+   display: none;
+ }
+
+ .merch-float-inner {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   background: var(--brown-deep);
+   border: 1px solid var(--border-light);
+   padding: 14px 20px 14px 24px;
+   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+   white-space: nowrap;
+ }
+
+ .merch-float-text {
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
+ }
+
+ .merch-float-label {
+   font-family: var(--font-body);
+   font-size: 13px;
+   font-weight: 700;
+   color: var(--white);
+   letter-spacing: 0.02em;
+ }
+
+ .merch-float-sub {
+   font-family: var(--font-body);
+   font-size: 11px;
+   color: rgba(255, 255, 255, 0.45);
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+ }
+
+ .merch-float-close {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: rgba(255, 255, 255, 0.4);
+   font-size: 13px;
+   font-weight: 700;
+   padding: 4px 4px 4px 8px;
+   transition: color 0.2s;
+   flex-shrink: 0;
+ }
+
+ .merch-float-close:hover {
+   color: var(--white);
+ }
+
+ @media (max-width: 900px) {
+   .merch-grid {
+     grid-template-columns: repeat(2, 1fr);
+   }
+ }
+
+ 
+ 

@@ -411,3 +411,25 @@ modalCard.addEventListener('touchmove', (e) => {
     e.preventDefault()
   }
 }, { passive: false })
+/* ═══════════════════════════════════════════════════════
+   FLOATING MERCH BAR
+   ═══════════════════════════════════════════════════════ */
+const merchFloat = document.getElementById('merch-float')
+const merchFloatClose = document.getElementById('merch-float-close')
+
+if (merchFloat && merchFloatClose) {
+  merchFloatClose.addEventListener('click', () => {
+    merchFloat.classList.add('hidden')
+  })
+
+  // Hide float bar when merch section is in view
+  ScrollTrigger.create({
+    trigger: '#merch',
+    start: 'top center',
+    end: 'bottom center',
+    onEnter: () => merchFloat.classList.add('hidden'),
+    onLeave: () => merchFloat.classList.remove('hidden'),
+    onEnterBack: () => merchFloat.classList.add('hidden'),
+    onLeaveBack: () => merchFloat.classList.remove('hidden'),
+  })
+}
