@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Your DP — Graduate Accelerate 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,600;0,700;0,800;1,700;1,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-deep: #210b00;
+      --brown-rich: #3b1f0a;
+      --gold: #C49A2A;
+      --gold-light: #eec04e;
+      --cream: #FAF6EF;
+      --cream-dark: #f0edec;
+      --white: #ffffff;
+      --text-muted: #50443d;
+      --border-light: rgba(232, 201, 106, 0.2);
+      --font-display: 'Anybody', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--brown-deep);
+      color: var(--cream);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .dp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      border-bottom: 1px solid var(--border-light);
+      background: rgba(33,11,0,0.9);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .dp-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .dp-nav-logo img {
+      height: 36px;
+      width: 36px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .dp-nav-logo span {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .dp-nav-back {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .dp-nav-back:hover { opacity: 0.7; }
+
+    /* HERO */
+    .dp-hero {
+      text-align: center;
+      padding: 60px 40px 40px;
+    }
+    .dp-hero-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .dp-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .dp-hero-title span { color: var(--gold); }
+    .dp-hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* MAIN LAYOUT */
+    .dp-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* CANVAS SIDE */
+    .dp-canvas-wrap {
+      position: sticky;
+      top: 80px;
+    }
+    .dp-canvas-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+    #dp-canvas {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: block;
+      border: 1px solid var(--border-light);
+      cursor: grab;
+      background: var(--brown-deep);
+    }
+    #dp-canvas:active { cursor: grabbing; }
+    .dp-download-btn {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      background: var(--gold);
+      color: var(--brown-deep);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .dp-download-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .dp-download-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    /* CONTROLS SIDE */
+    .dp-controls { display: flex; flex-direction: column; gap: 28px; }
+
+    .dp-step {
+      border: 1px solid var(--border-light);
+      padding: 28px;
+      background: rgba(255,255,255,0.02);
+    }
+    .dp-step-num {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .dp-step-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    /* Upload */
+    .dp-upload-zone {
+      border: 1px dashed rgba(196,154,42,0.4);
+      padding: 40px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .dp-upload-zone:hover { border-color: var(--gold); background: rgba(196,154,42,0.04); }
+    .dp-upload-zone.dragging { border-color: var(--gold); background: rgba(196,154,42,0.08); }
+    .dp-upload-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    .dp-upload-icon { font-size: 32px; margin-bottom: 10px; }
+    .dp-upload-text {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+    .dp-upload-text strong { color: var(--gold); }
+
+    /* Name input */
+    .dp-input-group { display: flex; flex-direction: column; gap: 8px; }
+    .dp-input-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .dp-input {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-light);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 12px 16px;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .dp-input:focus { border-color: var(--gold); }
+    .dp-input::placeholder { color: rgba(255,255,255,0.2); }
+
+    /* Sliders */
+    .dp-slider-group { display: flex; flex-direction: column; gap: 10px; }
+    .dp-slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .dp-slider-val {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    input[type=range] {
+      width: 100%;
+      height: 3px;
+      appearance: none;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px; height: 16px;
+      background: var(--gold);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 16px; height: 16px;
+      background: var(--gold);
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
+    .dp-hint {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .dp-nav { padding: 14px 20px; }
+      .dp-hero { padding: 40px 20px 24px; }
+      .dp-main { grid-template-columns: 1fr; padding: 0 20px 60px; gap: 32px; }
+      .dp-canvas-wrap { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="dp-nav">
+    <a href="/" class="dp-nav-logo">
+      <img src="/logo.jpeg" alt="Graduate Accelerate" />
+      <span>GRADUATE<br/>ACCELERATE</span>
+    </a>
+    <a href="/" class="dp-nav-back">← Back to site</a>
+  </nav>
+
+  <div class="dp-hero">
+    <p class="dp-hero-label">— Official Conference DP</p>
+    <h1 class="dp-hero-title">Get Your <span>Vantage Point</span><br/>DP Frame</h1>
+    <p class="dp-hero-sub">Upload your photo, add your name, and download your custom Graduate Accelerate 2026 profile picture.</p>
+  </div>
+
+  <div class="dp-main">
+
+    <!-- Canvas preview -->
+    <div class="dp-canvas-wrap">
+      <p class="dp-canvas-label">Preview — drag to reposition photo</p>
+      <canvas id="dp-canvas" width="1000" height="1000"></canvas>
+      <button class="dp-download-btn" id="dp-download" disabled>
+        ↓ Download My DP
+      </button>
+    </div>
+
+    <!-- Controls -->
+    <div class="dp-controls">
+
+      <!-- Step 1 -->
+      <div class="dp-step">
+        <p class="dp-step-num">Step 1</p>
+        <p class="dp-step-title">Upload Your Photo</p>
+        <div class="dp-upload-zone" id="upload-zone">
+          <input type="file" id="photo-input" accept="image/*" />
+          <div class="dp-upload-icon">📷</div>
+          <p class="dp-upload-text"><strong>Click to choose</strong> or drag & drop<br/>JPG, PNG, WEBP supported</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="dp-step">
+        <p class="dp-step-num">Step 2</p>
+        <p class="dp-step-title">Enter Your Name</p>
+        <div class="dp-input-group">
+          <label class="dp-input-label" for="name-input">Full name (appears on the DP)</label>
+          <input type="text" id="name-input" class="dp-input" placeholder="e.g. Adewale Johnson" maxlength="40" />
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="dp-step">
+        <p class="dp-step-num">Step 3</p>
+        <p class="dp-step-title">Adjust Your Photo</p>
+        <div class="dp-slider-group">
+          <div class="dp-slider-row">
+            <label class="dp-input-label" for="zoom-input">Zoom</label>
+            <span class="dp-slider-val" id="zoom-val">100%</span>
+          </div>
+          <input type="range" id="zoom-input" min="50" max="300" value="100" step="1" />
+
+          <div class="dp-slider-row" style="margin-top:16px">
+            <label class="dp-input-label" for="brightness-input">Brightness</label>
+            <span class="dp-slider-val" id="brightness-val">100%</span>
+          </div>
+          <input type="range" id="brightness-input" min="50" max="150" value="100" step="1" />
+        </div>
+        <p class="dp-hint">Drag the preview image to reposition your photo within the frame.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="dp-step">
+        <p class="dp-step-num">Step 4</p>
+        <p class="dp-step-title">Download & Share</p>
+        <p class="dp-hint" style="margin-top:0">Once you're happy with the preview, click the <strong style="color:var(--gold)">Download My DP</strong> button on the left. Share it on Instagram, WhatsApp, LinkedIn and tag <strong style="color:var(--gold)">@GraduateAccelerate</strong>!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('dp-canvas')
+    const ctx = canvas.getContext('2d')
+    const SIZE = 1000
+
+    let userPhoto = null
+    let photoX = 0, photoY = 0
+    let photoDragStartX = 0, photoDragStartY = 0
+    let isDragging = false
+    let zoom = 1
+    let brightness = 1
+    let userName = ''
+    let frameImg = null
+    let photoNaturalW = 0, photoNaturalH = 0
+
+    // Draw everything
+    function draw() {
+      ctx.clearRect(0, 0, SIZE, SIZE)
+
+      // Background
+      ctx.fillStyle = '#210b00'
+      ctx.fillRect(0, 0, SIZE, SIZE)
+
+      // Draw user photo behind frame
+      if (userPhoto) {
+        ctx.save()
+        ctx.filter = `brightness(${brightness})`
+        const scale = (SIZE / Math.max(photoNaturalW, photoNaturalH)) * zoom
+        const drawW = photoNaturalW * scale
+        const drawH = photoNaturalH * scale
+        const cx = SIZE / 2 + photoX
+        const cy = SIZE / 2 + photoY
+        ctx.drawImage(userPhoto, cx - drawW / 2, cy - drawH / 2, drawW, drawH)
+        ctx.filter = 'none'
+        ctx.restore()
+      }
+
+      // Draw frame on top
+      drawFrame()
+
+      // Draw name
+      if (userName.trim()) {
+        const name = userName.trim().toUpperCase()
+        ctx.save()
+        ctx.font = `800 ${SIZE * 0.038}px 'Anybody', serif`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        const nameY = SIZE * 0.885
+        // Name background pill
+        const metrics = ctx.measureText(name)
+        const pw = metrics.width + 48
+        const ph = SIZE * 0.052
+        const px = SIZE / 2 - pw / 2
+        const py = nameY - ph / 2
+        ctx.fillStyle = '#C49A2A'
+        ctx.fillRect(px, py, pw, ph)
+        ctx.fillStyle = '#210b00'
+        ctx.fillText(name, SIZE / 2, nameY)
+        ctx.restore()
+      }
+    }
+
+    function drawFrame() {
+      const S = SIZE
+      const border = S * 0.07
+
+      ctx.save()
+
+      // Outer gold border top/bottom/left/right
+      ctx.fillStyle = '#C49A2A'
+      ctx.fillRect(0, 0, S, border)
+      ctx.fillRect(0, S - border, S, border)
+      ctx.fillRect(0, 0, border, S)
+      ctx.fillRect(S - border, 0, border, S)
+
+      // Inner dark overlay
+      ctx.fillStyle = 'rgba(33,11,0,0.0)'
+      ctx.fillRect(border, border, S - border * 2, S - border * 2)
+
+      // Dashed inner border
+      ctx.strokeStyle = '#C49A2A'
+      ctx.lineWidth = 1.5
+      ctx.setLineDash([12, 6])
+      ctx.strokeRect(border + 16, border + 16, S - (border + 16) * 2, S - (border + 16) * 2)
+      ctx.setLineDash([])
+
+      // Corner circles
+      const corners = [[border, border], [S - border, border], [border, S - border], [S - border, S - border]]
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = '#C49A2A'
+        ctx.beginPath()
+        ctx.arc(cx, cy, border * 0.42, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.fillStyle = '#210b00'
+        ctx.beginPath()
+        ctx.arc(cx, cy, border * 0.17, 0, Math.PI * 2)
+        ctx.fill()
+      })
+
+      // TOP TEXT BAND
+      ctx.fillStyle = '#210b00'
+      ctx.font = `800 ${S * 0.016}px 'DM Sans', sans-serif`
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.fillText('GRADUATE ACCELERATE  ·  THE VANTAGE POINT  ·  2026  ·  OGBOMOSO', S / 2, border / 2)
+
+      // BOTTOM TEXT BAND
+      ctx.fillText('EMPOWER  ·  EQUIP  ·  ELEVATE  ·  AUGUST 1ST  ·  THE ASSEMBLY', S / 2, S - border / 2)
+
+      // LEFT TEXT (rotated)
+      ctx.save()
+      ctx.translate(border / 2, S / 2)
+      ctx.rotate(-Math.PI / 2)
+      ctx.fillText('GRADUATE ACCELERATE 2026  ·  THE VANTAGE POINT', 0, 0)
+      ctx.restore()
+
+      // RIGHT TEXT (rotated)
+      ctx.save()
+      ctx.translate(S - border / 2, S / 2)
+      ctx.rotate(Math.PI / 2)
+      ctx.fillText('GRADUATE ACCELERATE 2026  ·  THE VANTAGE POINT', 0, 0)
+      ctx.restore()
+
+      // TOP HEADLINE
+      const topY = border + S * 0.04
+
+      // ctx.fillStyle = 'rgba(196,154,42,0.7)'
+      // ctx.font = `700 ${S * 0.018}px 'DM Sans', sans-serif`
+      // ctx.textAlign = 'center'
+      // ctx.textBaseline = 'middle'
+      // ctx.fillText('1ST EDITION', S / 2, topY - S * 0.04)
+
+      ctx.fillStyle = '#FAF6EF'
+      ctx.font = `800 ${S * 0.055}px 'Anybody', serif`
+      ctx.fillText("I'LL BE AT", S / 2, topY + S * 0.01)
+
+      ctx.fillStyle = '#C49A2A'
+      ctx.fillText('THE VANTAGE', S / 2, topY + S * 0.07)
+
+      ctx.fillStyle = '#FAF6EF'
+      ctx.fillText('POINT.', S / 2, topY + S * 0.13)
+
+      // Divider line
+      ctx.strokeStyle = 'rgba(196,154,42,0.5)'
+      ctx.lineWidth = 1
+      ctx.beginPath()
+      ctx.moveTo(S * 0.25, topY + S * 0.165)
+      ctx.lineTo(S * 0.75, topY + S * 0.165)
+      ctx.stroke()
+
+      // BOTTOM SECTION
+      const botY = S - border - S * 0.18
+
+      ctx.strokeStyle = 'rgba(196,154,42,0.5)'
+      ctx.beginPath()
+      ctx.moveTo(S * 0.25, botY)
+      ctx.lineTo(S * 0.75, botY)
+      ctx.stroke()
+
+      ctx.fillStyle = 'rgba(250,246,239,0.8)'
+      ctx.font = `700 ${S * 0.018}px 'DM Sans', sans-serif`
+      ctx.letterSpacing = '3px'
+      ctx.fillText('GRADUATE ACCELERATE CONFERENCE', S / 2, botY + S * 0.04)
+
+      ctx.fillStyle = '#C49A2A'
+      ctx.font = `800 ${S * 0.042}px 'Anybody', serif`
+      ctx.fillText('2026', S / 2, botY + S * 0.09)
+
+      ctx.strokeStyle = 'rgba(196,154,42,0.5)'
+      ctx.beginPath()
+      ctx.moveTo(S * 0.25, botY + S * 0.115)
+      ctx.lineTo(S * 0.75, botY + S * 0.115)
+      ctx.stroke()
+
+      // ctx.fillStyle = 'rgba(250,246,239,0.5)'
+      // ctx.font = `500 ${S * 0.016}px 'DM Sans', sans-serif`
+      // ctx.fillText('AUGUST 1ST  ·  THE ASSEMBLY, OGBOMOSO', S / 2, botY + S * 0.145)
+
+      // ctx.fillStyle = '#C49A2A'
+      // ctx.font = `700 ${S * 0.016}px 'DM Sans', sans-serif`
+      // ctx.fillText('EMPOWER  ·  EQUIP  ·  ELEVATE', S / 2, botY + S * 0.18)
+
+      ctx.restore()
+    }
+
+    // Initial draw
+    draw()
+
+    // Photo upload
+    const photoInput = document.getElementById('photo-input')
+    const uploadZone = document.getElementById('upload-zone')
+
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0]
+      if (!file) return
+      loadPhoto(file)
+    })
+
+    uploadZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      uploadZone.classList.add('dragging')
+    })
+    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragging'))
+    uploadZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      uploadZone.classList.remove('dragging')
+      const file = e.dataTransfer.files[0]
+      if (file && file.type.startsWith('image/')) loadPhoto(file)
+    })
+
+    function loadPhoto(file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const img = new Image()
+        img.onload = () => {
+          userPhoto = img
+          photoNaturalW = img.naturalWidth
+          photoNaturalH = img.naturalHeight
+          photoX = 0
+          photoY = 0
+          document.getElementById('dp-download').disabled = false
+          draw()
+        }
+        img.src = e.target.result
+      }
+      reader.readAsDataURL(file)
+    }
+
+    // Name input
+    document.getElementById('name-input').addEventListener('input', (e) => {
+      userName = e.target.value
+      draw()
+    })
+
+    // Zoom slider
+    document.getElementById('zoom-input').addEventListener('input', (e) => {
+      zoom = e.target.value / 100
+      document.getElementById('zoom-val').textContent = e.target.value + '%'
+      draw()
+    })
+
+    // Brightness slider
+    document.getElementById('brightness-input').addEventListener('input', (e) => {
+      brightness = e.target.value / 100
+      document.getElementById('brightness-val').textContent = e.target.value + '%'
+      draw()
+    })
+
+    // Drag to reposition
+    canvas.addEventListener('mousedown', (e) => {
+      if (!userPhoto) return
+      isDragging = true
+      photoDragStartX = e.clientX - photoX
+      photoDragStartY = e.clientY - photoY
+      canvas.style.cursor = 'grabbing'
+    })
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return
+      photoX = e.clientX - photoDragStartX
+      photoY = e.clientY - photoDragStartY
+      draw()
+    })
+    window.addEventListener('mouseup', () => {
+      isDragging = false
+      canvas.style.cursor = 'grab'
+    })
+
+    // Touch drag
+    canvas.addEventListener('touchstart', (e) => {
+      if (!userPhoto) return
+      isDragging = true
+      const t = e.touches[0]
+      photoDragStartX = t.clientX - photoX
+      photoDragStartY = t.clientY - photoY
+    }, { passive: true })
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return
+      const t = e.touches[0]
+      photoX = t.clientX - photoDragStartX
+      photoY = t.clientY - photoDragStartY
+      draw()
+    }, { passive: true })
+    window.addEventListener('touchend', () => { isDragging = false })
+
+    // Download
+    document.getElementById('dp-download').addEventListener('click', () => {
+      const link = document.createElement('a')
+      link.download = 'GA2026-VantagePoint-DP.png'
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    })
+  </script>
+</body>
+</html>
